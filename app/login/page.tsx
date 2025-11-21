@@ -19,7 +19,7 @@ export default function Login() {
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: 'https://ethio-med-q-bank.vercel.app/auth/callback', // ← your exact Vercel URL
+        emailRedirectTo: 'https://ethio-med-q-bank.vercel.app/api/auth/callback',
       },
     });
 
