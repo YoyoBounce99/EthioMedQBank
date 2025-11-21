@@ -11,9 +11,10 @@ export async function GET(request: Request) {
   const access_token = url.searchParams.get("access_token");
   const refresh_token = url.searchParams.get("refresh_token");
 
-  const cookieStore = cookies();
+  // FIX: cookies() is async in Next.js 15
+  const cookieStore = await cookies();
 
-  // Create Supabase client with cookies
+  // Create Supabase client with cookies wiring
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -32,12 +33,12 @@ export async function GET(request: Request) {
     },
   );
 
-  // CASE 1: PKCE / code exchange
+  // CASE 1: PKCE code exchange
   if (code) {
     await supabase.auth.exchangeCodeForSession(code);
   }
 
-  // CASE 2: Magic link with tokens
+  // CASE 2: Magic link tokens
   if (access_token && refresh_token) {
     await supabase.auth.setSession({
       access_token,
@@ -45,6 +46,5 @@ export async function GET(request: Request) {
     });
   }
 
-  // Redirect to dashboard
   return NextResponse.redirect(new URL("/dashboard", request.url));
 }
