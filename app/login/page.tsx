@@ -17,7 +17,7 @@ export default function Login() {
     // Magic Link Login for simplicity
     const { error } = await supabase.auth.signInWithOtp({
       email,
-      options: { emailRedirectTo: 'https://ethio-med-q-bank.vercel.app/auth/callback' },
+      options: { emailRedirectTo: `${location.origin}/auth/confirm` },
     });
 
     if (error) setMessage(error.message);
