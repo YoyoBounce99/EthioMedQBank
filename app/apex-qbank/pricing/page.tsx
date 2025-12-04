@@ -1,6 +1,6 @@
 // app/apex-qbank/pricing/page.tsx
 import Link from 'next/link';
-import { CheckCircle, ArrowRight, BookOpen } from 'lucide-react';
+import { CheckCircle, ArrowRight, BookOpen, Target } from 'lucide-react';
 
 const currency = "Birr";
 
