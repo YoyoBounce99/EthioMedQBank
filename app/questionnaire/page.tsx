@@ -6,6 +6,26 @@ import { createClient } from '@/utils/supabase';
 import { useRouter } from 'next/navigation';
 import { Zap, CheckCircle, Loader2 } from 'lucide-react';
 
+// Add this useEffect right after your imports and before the component
+useEffect(() => {
+  if (!user) {
+    router.replace('/signup');
+    return;
+  }
+
+  // If profile already has name (questionnaire completed) OR is_paid = true → skip to dashboard
+  supabase
+    .from('profiles')
+    .select('name, is_paid')
+    .eq('id', user.id)
+    .single()
+    .then(({ data, error }) => {
+      if (!error && (data?.name || data?.is_paid)) {
+        router.replace('/dashboard');
+      }
+    });
+}, [user, router, supabase]);
+
 const LEVELS = [
   'Med Student',
   'Intern',
