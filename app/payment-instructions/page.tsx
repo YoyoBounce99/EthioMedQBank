@@ -24,7 +24,23 @@ export default function PaymentInstructionsPage() {
       }
     });
   }, [router, supabase]);
+  
+// Add this useEffect — redirects paid users instantly
+useEffect(() => {
+  if (!user) return;
 
+  supabase
+    .from('profiles')
+    .select('is_paid')
+    .eq('id', user.id)
+    .single()
+    .then(({ data }) => {
+      if (data?.is_paid) {
+        router.replace('/dashboard');
+      }
+    });
+}, [user, router, supabase]);
+  
   const handleCopy = (text: string, field: string) => {
     navigator.clipboard.writeText(text);
     setCopiedField(field);
