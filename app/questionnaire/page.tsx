@@ -6,26 +6,6 @@ import { createClient } from '@/utils/supabase';
 import { useRouter } from 'next/navigation';
 import { Zap, CheckCircle, Loader2 } from 'lucide-react';
 
-// Add this useEffect right after your imports and before the component
-useEffect(() => {
-  if (!user) {
-    router.replace('/signup');
-    return;
-  }
-
-  // If profile already has name (questionnaire completed) OR is_paid = true → skip to dashboard
-  supabase
-    .from('profiles')
-    .select('name, is_paid')
-    .eq('id', user.id)
-    .single()
-    .then(({ data, error }) => {
-      if (!error && (data?.name || data?.is_paid)) {
-        router.replace('/dashboard');
-      }
-    });
-}, [user, router, supabase]);
-
 const LEVELS = [
   'Med Student',
   'Intern',
@@ -51,19 +31,37 @@ export default function QuestionnairePage() {
   const supabase = createClient();
   const router = useRouter();
 
-  // Ensure user is logged in
+  // Load user
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
       if (!data.user) {
         router.replace('/signup');
       } else {
         setUser(data.user);
-        // Pre-fill name from auth if available
-        const name = data.user.user_metadata?.name || data.user.email?.split('@')[0] || '';
-        setFormData(prev => ({ ...prev, name }));
+        // Pre-fill name if already exists
+        setFormData((prev) => ({
+          ...prev,
+          name: data.user.user_metadata?.name || data.user.email?.split('@')[0] || '',
+        }));
       }
     });
   }, [router, supabase]);
+
+  // Skip questionnaire if already completed or paid
+  useEffect(() => {
+    if (!user) return;
+
+    supabase
+      .from('profiles')
+      .select('name, is_paid')
+      .eq('id', user.id)
+      .single()
+      .then(({ data }) => {
+        if (data?.name || data?.is_paid) {
+          router.replace('/dashboard');
+        }
+      });
+  }, [user, router, supabase]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -92,7 +90,13 @@ export default function QuestionnairePage() {
     setLoading(false);
   };
 
-  if (!user) return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+  if (!user) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <Loader2 className="w-12 h-12 animate-spin text-blue-600" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
@@ -177,8 +181,10 @@ export default function QuestionnairePage() {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">Select Level</option>
-                {LEVELS.map(level => (
-                  <option key={level} value={level}>{level}</option>
+                {LEVELS.map((lvl) => (
+                  <option key={lvl} value={lvl}>
+                    {lvl}
+                  </option>
                 ))}
               </select>
             </div>
