@@ -167,7 +167,7 @@ export default function ApexQBankPricingPage() {
             </h2>
             <div className="bg-white shadow-xl rounded-2xl overflow-hidden">
               <div className="p-8">
-                <.ul className="space-y-4">
+                <ul className="space-y-4">
                   {features.map((feature, index) => (
                     <li key={index} className="flex items-center justify-between border-b last:border-b-0 py-3">
                       <span className="text-lg font-medium text-gray-700">{feature}</span>
