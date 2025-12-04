@@ -107,24 +107,26 @@ export default function TimedModeQuiz() {
 
           <div className="space-y-4">
             {(['A', 'B', 'C', 'D'] as const).map((key) => {
-              const text = currentQuestion[`option_${key.toLowerCase()}`];
-              const isSelected = answers[currentQuestion.id] === key;
+  const optionText = currentQuestion[
+    `option_${key.toLowerCase()}` as keyof Question
+  ] as string;
+  const isSelected = answers[currentQuestion.id] === key;
 
-              return (
-                <button
-                  key={key}
-                  onClick={() => handleAnswer(currentQuestion.id, key)}
-                  className={`w-full text-left p-5 rounded-xl border-2 transition flex items-start ${
-                    isSelected
-                      ? 'border-indigo-600 bg-indigo-50 ring-2 ring-indigo-500'
-                      : 'border-gray-200 hover:border-gray-400'
-                  }`}
-                >
-                  <span className="font-bold mr-4 text-indigo-600">{key}.</span>
-                  <span className="flex-1">{text}</span>
-                </button>
-              );
-            })}
+  return (
+    <button
+      key={key}
+      onClick={() => handleAnswer(currentQuestion.id, key)}
+      className={`w-full text-left p-5 rounded-xl border-2 transition flex items-start ${
+        isSelected
+          ? 'border-indigo-600 bg-indigo-50 ring-2 ring-indigo-500'
+          : 'border-gray-200 hover:border-gray-400'
+      }`}
+    >
+      <span className="font-bold mr-4 text-indigo-600">{key}.</span>
+      <span className="flex-1">{optionText}</span>
+    </button>
+  );
+})}
           </div>
 
           <div className="mt-8 p-4 bg-gray-50 rounded-lg text-sm text-gray-600 border border-gray-200 flex items-center">
