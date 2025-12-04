@@ -73,22 +73,29 @@ export default function QuestionnairePage() {
 
     setLoading(true);
 
-    const { error } = await supabase
-      .from('profiles')
-      .upsert({
-        id: user.id,
-        ...formData,
-        updated_at: new Date().toISOString(),
-      });
+   const { error } = await supabase
+    .from('profiles')
+    .upsert({
+      id: user.id,
+      name: formData.name || null,
+      age: formData.age ? parseInt(formData.age) : null,
+      sex: formData.sex || null,
+      university: formData.university || null,
+      level: formData.level || null,
+      updated_at: new Date().toISOString(),
+    }, {
+      onConflict: 'id'
+    });
 
-    if (!error) {
-      setSuccess(true);
-      setTimeout(() => router.push('/payment-instructions'), 2000);
-    } else {
-      alert('Error saving profile. Please try again.');
-    }
-    setLoading(false);
-  };
+  if (error) {
+    console.error('Supabase error:', error);
+    alert('Error: ' + error.message);
+  } else {
+    setSuccess(true);
+    setTimeout(() => router.push('/payment-instructions'), 2000);
+  }
+  setLoading(false);
+};
 
   if (!user) {
     return (
