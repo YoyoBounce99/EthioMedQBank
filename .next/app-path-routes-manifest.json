@@ -1,0 +1,15 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/auth/callback/route": "/api/auth/callback",
+  "/apex-qbank/page": "/apex-qbank",
+  "/apex-qbank/pricing/page": "/apex-qbank/pricing",
+  "/dashboard/page": "/dashboard",
+  "/page": "/",
+  "/payment-instructions/page": "/payment-instructions",
+  "/practice/page": "/practice",
+  "/questionnaire/page": "/questionnaire",
+  "/quiz/timed-mode/page": "/quiz/timed-mode",
+  "/quiz/tutor-mode/page": "/quiz/tutor-mode",
+  "/review/page": "/review",
+  "/signup/page": "/signup"
+}

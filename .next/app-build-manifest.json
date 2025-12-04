@@ -1,0 +1,115 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/chunks/app/_not-found/page-9311bc5b708b5a30.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/css/f83666abb1520f35.css",
+      "static/chunks/app/layout-6a4719c24bfba5fa.js"
+    ],
+    "/api/auth/callback/route": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/chunks/app/api/auth/callback/route-288e4a5944d1ceed.js"
+    ],
+    "/apex-qbank/page": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/apex-qbank/page-5ad5b2d6f1e419db.js"
+    ],
+    "/apex-qbank/pricing/page": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/apex-qbank/pricing/page-5ad5b2d6f1e419db.js"
+    ],
+    "/dashboard/page": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/dashboard/page-5ad5b2d6f1e419db.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/page-5ad5b2d6f1e419db.js"
+    ],
+    "/payment-instructions/page": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/chunks/490-490266351e571a52.js",
+      "static/chunks/app/payment-instructions/page-76dc4adf530f93f3.js"
+    ],
+    "/practice/page": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/chunks/490-490266351e571a52.js",
+      "static/chunks/app/practice/page-f12bceac4b2566d4.js"
+    ],
+    "/questionnaire/page": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/chunks/490-490266351e571a52.js",
+      "static/chunks/app/questionnaire/page-b4ff09e7bc13e28c.js"
+    ],
+    "/quiz/timed-mode/page": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/chunks/490-490266351e571a52.js",
+      "static/chunks/app/quiz/timed-mode/page-8d34133ba699b17f.js"
+    ],
+    "/quiz/tutor-mode/page": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/chunks/490-490266351e571a52.js",
+      "static/chunks/app/quiz/tutor-mode/page-a463a09f24b50c4b.js"
+    ],
+    "/review/page": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/review/page-5ad5b2d6f1e419db.js"
+    ],
+    "/signup/page": [
+      "static/chunks/webpack-d98f8de399bb74b7.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-47484af636b98715.js",
+      "static/chunks/main-app-bf7230aa1d6c92a9.js",
+      "static/chunks/490-490266351e571a52.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/signup/page-7b64f06b6d8a8c38.js"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/auth/callback/route": "app/api/auth/callback/route.js",
+  "/apex-qbank/page": "app/apex-qbank/page.js",
+  "/apex-qbank/pricing/page": "app/apex-qbank/pricing/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/page": "app/page.js",
+  "/payment-instructions/page": "app/payment-instructions/page.js",
+  "/practice/page": "app/practice/page.js",
+  "/questionnaire/page": "app/questionnaire/page.js",
+  "/quiz/timed-mode/page": "app/quiz/timed-mode/page.js",
+  "/quiz/tutor-mode/page": "app/quiz/tutor-mode/page.js",
+  "/review/page": "app/review/page.js",
+  "/signup/page": "app/signup/page.js"
+}
