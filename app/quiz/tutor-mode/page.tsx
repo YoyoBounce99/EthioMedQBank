@@ -100,9 +100,11 @@ export default function TutorModeQuiz() {
 
           <div className="space-y-4 mb-8">
             {(['A', 'B', 'C', 'D'] as const).map((key) => {
-              const text = currentQuestion[`option_${key.toLowerCase()}`];
-              const isCorrect = key === currentQuestion.correct_answer;
-              const isSelected = selectedAnswer === key;
+  const optionText = currentQuestion[
+    `option_${key.toLowerCase()}` as keyof Question
+  ] as string;
+  const isCorrect = key === currentQuestion.correct_answer;
+  const isSelected = selectedAnswer === key;
 
               let classes = "flex items-start p-5 border rounded-xl transition text-left w-full text-gray-800";
               if (isRevealed) {
