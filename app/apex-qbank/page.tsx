@@ -1,6 +1,6 @@
 // app/apex-qbank/page.tsx
 import Link from 'next/link';
-import { ArrowRight, GraduationCap } from 'lucide-react';
+import { ArrowRight, BarChart3, Clock, BookOpen, GraduationCap } from 'lucide-react';
 
 export default function ApexQBankLandingPage() {
   return (
