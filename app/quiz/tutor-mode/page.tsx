@@ -124,7 +124,7 @@ export default function TutorModeQuiz() {
                   className={classes}
                 >
                   <span className="font-bold mr-4 text-indigo-600">{key}.</span>
-                  <span className="flex-1">{text}</span>
+                  <span className="flex-1">{optionText}</span>
                   {isRevealed && isCorrect && <CheckCircle className="w-5 h-5 ml-auto text-green-600" />}
                   {isRevealed && isSelected && !isCorrect && <XCircle className="w-5 h-5 ml-auto text-red-600" />}
                 </button>
