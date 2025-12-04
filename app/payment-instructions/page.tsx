@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 import { createClient } from '@/utils/supabase';
 import { useRouter } from 'next/navigation';
-import { CheckCircle, Copy, Smartphone, Building2, Mail, ShieldCheck, Loader2 } from 'lucide-react';
+import { CheckCircle, Copy, Smartphone, Building2, Mail, ShieldCheck, Loader2, Clock } from 'lucide-react';
 
 export default function PaymentInstructionsPage() {
   const [user, setUser] = useState<any>(null);
